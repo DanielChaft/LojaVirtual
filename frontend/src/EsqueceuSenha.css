@@ -1,0 +1,24 @@
+.box {
+    width: 300px
+}
+
+.row {
+    margin: 10px 0;
+    display: block
+}
+
+.btn {
+    width: fit-content;
+    margin: auto;
+    padding: 5px;
+}
+
+.esqueceu-senha {
+    float: right;
+    font-size: 13px
+}
+
+input[type="email"] {
+    width: 100%;
+    color: black;
+}

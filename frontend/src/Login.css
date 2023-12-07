@@ -1,0 +1,22 @@
+container {
+    background-color: #CCC9DC;
+}
+
+button {
+    width: 100%;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    color: black;
+}
+
+.esqueceu-senha {
+    float: right;
+    font-size: 13px
+}
+
+.box {
+    width: 300px
+}

@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = LojaVirtual
+build_property.ProjectDir = C:\GitProjects\LojaVirtual\backend\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

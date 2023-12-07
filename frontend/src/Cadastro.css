@@ -1,0 +1,44 @@
+.label {
+    display: inline-block;
+    margin: 5px 0 0
+}
+
+.row {
+    margin: 10px 0;
+    display: block
+}
+
+.box {
+    width: 300px
+}
+
+button {
+    width: 50%;
+    margin: auto;
+}
+
+.input-field {
+    width: 280px
+}
+
+/*Tamanho da tela para desktop*/
+@media only screen and (min-width: 768px){
+
+    .box {
+        width: 720px
+    }
+
+    .row {
+        display: flex;
+        margin: 18px 0;
+    }
+
+    .input-field {
+        width: 340px;
+        color: black;
+    }
+
+    .left {
+        margin-right: 40px
+    }
+}
