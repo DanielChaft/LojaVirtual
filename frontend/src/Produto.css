@@ -28,26 +28,78 @@ button {
         width: 700px;
     }
 
-    .image {
+    .flexbox {
+        display: flex;
+    }
+
+    .button {
         flex: 1;
-        padding-top: 9px;
-    }
-
-    .row {
-            display: flex;
-            border: 0px solid black;
-            padding: 10px;
-            text-align: center;
-            /* align-content: center; */
-    }
-
-    .input-field {
-        /* font-palette: dark; */
-        color: black;
+        border: 0px solid black;
+        padding: 10px;
+        text-align: center;
     }
 
     .left {
-        flex: 1;
-        margin-left: 10px;
+        display: flex;
+        padding: 15px;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        padding-top: 25px;
+        margin: 0 0;
+        gap: 30px;
+        background: #1B2A41;
+    }
+
+    .inputBox {
+        position:relative;
+    }
+
+    .inputBox input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 3px;
+        height: 35px;
+        border-bottom-width: 2px;
+        background: #1d2b3a;
+        outline: none;
+        color: #fff;
+        font-size: 1em;
+        transition: 0.5s;
+    }
+
+    .inputBox span {
+        position: absolute;
+        left: 0;
+        padding: 7px;
+        pointer-events: none;
+        font-size: 14px;
+        color: rgba(255,255,255,0.25);
+        text-transform: uppercase;
+        transition: 0.5s;
+    }
+
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span {
+        color: rgb(255, 174, 0);
+        transform: translateX(5px) translateY(-10px);
+        font-size: 0.60em;
+        padding: 0 5px;
+        background: #1d2b3a;
+    /*  border-radius: 3px;
+        border-top: 1px solid rgb(255, 174, 0);
+        border-left: 1px solid rgb(255, 174, 0);
+        border-right: 1px solid rgb(255, 174, 0); */
+        letter-spacing: 0.1em;
+    }
+
+    .inputBox input:valid,
+    .inputBox input:focus {
+        border: 1px solid rgb(255, 174, 0);
     }
 }

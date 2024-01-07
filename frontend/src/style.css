@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
     color: #cfd8dc;
     margin: 0;
     padding: 0;
     border: 0;
-    font-family: Arial, sans-serif;
-    text-align: left;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: Arial, sans-serif;
+    text-align: left; */
 }
 
 h1, h2, h3 {
@@ -56,19 +60,24 @@ p {
     margin: 5px 0
 }
 
-input[type=text],
+/* input[type=text], */
+/* input[type=email], */
 input[type=password],
 input[type=number],
-input[type=email],
 select {
     border-radius: 3px;
     padding: 10px;
-    border: #91949d 1px solid;
+    border: #91949d 0px solid;
     box-sizing: border-box;
     margin: 3px 0;
     display: block;
     min-width: 200px;
     height: 35px;
+    border-bottom-width: 2px;
+}
+
+input:focus {
+    border-color: rgb(255, 174, 0);
 }
 
 input[type=radio] {

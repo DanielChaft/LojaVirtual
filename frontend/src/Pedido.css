@@ -1,0 +1,53 @@
+.label {
+    display: inline-block;
+    margin: 5px 0 0
+}
+
+.row {
+    margin: 10px 0;
+    display: block
+}
+
+.box {
+    width: 300px
+}
+
+button {
+    width: 50%;
+    margin: auto;
+}
+
+.input-field {
+    width: 300px;
+}
+
+/*Tamanho da tela para desktop*/
+@media only screen and (min-width: 768px){
+
+    .box {
+        width: 700px;
+    }
+
+    .image {
+        flex: 1;
+        padding-top: 9px;
+    }
+
+    .row {
+            display: flex;
+            border: 0px solid black;
+            padding: 10px;
+            text-align: center;
+            /* align-content: center; */
+    }
+
+    .input-field {
+        /* font-palette: dark; */
+        color: black;
+    }
+
+    .left {
+        flex: 1;
+        margin-left: 10px;
+    }
+}

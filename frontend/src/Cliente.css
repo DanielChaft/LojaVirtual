@@ -1,0 +1,115 @@
+.label {
+    display: inline-block;
+    margin: 5px 0 0
+}
+
+.box {
+    width: 300px
+}
+
+button {
+    width: 50%;
+    margin: auto;
+}
+
+.input-field {
+    width: 300px;
+}
+
+/*Tamanho da tela para desktop*/
+@media only screen and (min-width: 768px){
+
+    .box {
+        width: 700px;
+    }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            margin: 0 0;
+            gap: 20px;
+            background: #1B2A41;
+        }
+
+            .input-field-cpf {
+                max-width: 20ch;
+            }
+
+            .input-field-email {
+                min-width: 42ch;
+            }
+
+            .input-field-cep {
+                max-width: 15ch;
+            }
+
+            .input-field-rua {
+                min-width: 50ch;
+            }
+
+            .input-field-numero {
+                max-width: 12ch;
+            }
+
+            .input-field-bairro {
+                min-width: 30ch;
+            }
+
+            .input-field-cidade {
+                min-width: 23ch;
+            }
+
+            .input-field-uf {
+                max-width: 7ch;
+            }
+
+        .inputBox {
+            position: relative;
+            width: 100%;
+        }
+
+        .inputBox input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 3px;
+            height: 35px;
+            border-bottom-width: 2px;
+            background: #1d2b3a;
+            outline: none;
+            color: #fff;
+            font-size: 1em;
+            transition: 0.5s;
+        }
+
+        .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 7px;
+            pointer-events: none;
+            font-size: 14px;
+            color: rgba(255,255,255,0.25);
+            text-transform: uppercase;
+            transition: 0.5s;
+        }
+
+        .inputBox input:valid ~ span,
+        .inputBox input:focus ~ span {
+            color: rgb(255, 174, 0);
+            transform: translateX(5px) translateY(-10px);
+            font-size: 0.60em;
+            padding: 0 5px;
+            background: #1d2b3a;
+        /*  border-radius: 3px;
+            border-top: 1px solid rgb(255, 174, 0);
+            border-left: 1px solid rgb(255, 174, 0);
+            border-right: 1px solid rgb(255, 174, 0); */
+            letter-spacing: 0.1em;
+        }
+
+        .inputBox input:valid,
+        .inputBox input:focus {
+            border: 1px solid rgb(255, 174, 0);
+        }
+}

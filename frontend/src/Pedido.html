@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Pedidos</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="Menu.css" type="text/css">
+    <link rel="stylesheet" href="Pedido.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="Menu.js"></script>
+</head>
+
+<body>
+
+    <main-menu></main-menu>
+
+    <div class="container">
+        <div class="box">
+
+            <img height="100" src="logo.png" />
+
+            <h1>Pedidos</h1>
+
+            <form>
+                <div class="row">
+
+                    <div class="image">
+                        <img src="produto.png" alt="Imagem do Produto" width="300" height="300">
+                    </div>
+
+                    <div class="left">
+                        <label for="txtCodigoProduto">Código do Produto:</label>
+                        <input type="text" class="input-field" id="txtCodigoProd" />
+
+                        <br />
+
+                        <label for="txtNomeProduto">Nome do Produto:</label>
+                        <input type="text" class="input-field" id="txtNomeProd" />
+
+                        <br />
+
+                        <label for="txtQtdEstoqueProduto">Quantidade em Estoque:</label>
+                        <input type="text" class="input-field" id="txtQtdEstoqueProd" />
+
+                        <br />
+
+                        <label for="txtPrecoProduto">Preço do Produto:</label>
+                        <input type="text" class="input-field" id="txtPrecoProd" />
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <button id="btnCadastroProduto">CADASTRAR</button>
+                </div>
+
+            </form>
+
+            <span id="spnErro" class="erro"></span>
+
+        </div>
+    </div>
+    <script src="Cliente.js"></script>
+</body>
+</html>

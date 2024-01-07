@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cliente</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="Menu.css" type="text/css">
+    <link rel="stylesheet" href="Cliente.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="Menu.js"></script>
+</head>
+
+<body>
+
+    <main-menu></main-menu>
+
+    <div class="container">
+        <div class="box">
+
+            <img height="100" src="logo.png" />
+
+            <h1>Cadastro de Cliente</h1>
+
+            <form>
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-nome" id="NomeCliente" />
+                        <span>Nome completo ou Razão Social</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-cpf" id="CPF" maxlength="14" oninput="formatarCPF()" />
+                        <span>CPF</span>
+                    </div>
+
+                    <script>
+                        function formatarCPF() {
+                            let cpf = document.getElementById("CPF");
+                            let valor = cpf.value;
+                            valor = valor.replace(/\D/g, "");
+                            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+                            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+                            valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+                            cpf.value = valor;
+                        }
+                    </script>
+
+                    <div class="inputBox">
+                        <input type="email" required="required" class="input-field-email" id="email" />
+                        <span>E-mail</span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-cep" id="cep" name="cep" maxlength="9" oninput="formatCEP(this)" onblur="pesquisacep(this.value);" />
+                        <span>CEP</span>
+                    </div>
+                </div>
+
+                <script>
+                    function formatCEP(input) {
+                        let cep = input.value.replace(/\D/g, '');
+                            if (cep.length >= 5) {
+                                cep = cep.substring(0, 5) + '-' + cep.substring(5);
+                            }
+                            input.value = cep;
+                    }
+
+                    function pesquisacep(valor) {
+                        var cep = valor.replace(/\D/g, "");
+                        if (cep != "") {
+                            var validacep = /^[0-9]{8}$/;
+                            if (validacep.test(cep)) {
+                                document.getElementById('rua').value = "...";
+                                document.getElementById('bairro').value = "...";
+                                document.getElementById('cidade').value = "...";
+                                document.getElementById('uf').value = "...";
+                                var script = document.createElement('script');
+                                script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+                                document.body.appendChild(script);
+                            } else {
+                                limpa_formulário_cep();
+                                alert("Formato de CEP ou CEP inválido.");
+                            }
+                        } else {
+                            limpa_formulário_cep();
+                        }
+                    }
+                </script>
+
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-rua" id="rua" name="rua">
+                        <span>Endereço</span>
+                    </div>
+                    <div class="inputBox">    
+                        <input type="text" required="required" class="input-field-numero" id="numero" name="numero">
+                        <span>Número</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-bairro" id="bairro" name="bairro">
+                        <span>Bairro</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-cidade" id="cidade" name="cidade">
+                        <span>Cidade</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" required="required" class="input-field-uf" id="uf" name="uf">
+                        <span>Estado</span>
+                    </div>
+                </div>
+
+                <script>
+                    function limpa_formulário_cep() {
+                        document.getElementById('rua').value = ("");
+                        document.getElementById('bairro').value = ("");
+                        document.getElementById('cidade').value = ("");
+                        document.getElementById('uf').value = ("");
+                    }
+                            
+                    function meu_callback(conteudo) {
+                        if (!("erro" in conteudo)) {
+                            document.getElementById('rua').value = (conteudo.logradouro);
+                            document.getElementById('bairro').value = (conteudo.bairro);
+                            document.getElementById('cidade').value = (conteudo.localidade);
+                            document.getElementById('uf').value = (conteudo.uf);
+                        } else {
+                            limpa_formulário_cep();
+                            alert("CEP não encontrado.");
+                        }
+                    }
+                </script>
+
+                <div class="row">
+                    <button id="btnCadastroCliente">CADASTRAR</button>
+                </div>
+
+            </form>
+
+            <span id="spnErro" class="erro"></span>
+
+        </div>
+    </div>
+    <script src="Cliente.js"></script>
+</body>
+</html>

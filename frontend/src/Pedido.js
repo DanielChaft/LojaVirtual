@@ -14,23 +14,23 @@
 
         var codigo = txtCodigoProd.value;
         var nome = txtNomeProd.value;
-        var quantidade = txtQtdEstoqueProd.value;
         var preco = txtPrecoProd.value;
+        var quantidade = txtQtdEstoqueProd.value;
 
         if (codigo == "") {
-            mensagemErro("Código do produto é obrigatório!");
+            mensagemErro("Código obrigatório!");
         }
         else if (nome == "") {
-            mensagemErro("Nome do produto é obrigatório!");
-        }
-        else if (quantidade == "") {
-            mensagemErro("Quantidade é obrigatório!");
+            mensagemErro("Nome obrigatório!");
         }
         else if (preco == "") {
-            mensagemErro("Preço é obrigatório!");
+            mensagemErro("Preço obrigatório!");
+        }
+        else if (quantidade == "") {
+            mensagemErro("Quantidade obrigatório!");
         }
         else {
-            cadastrarProduto(codigo, nome, quantidade, preco);
+            cadastrarProduto(codigo, nome, preco, quantidade);
         }
     };
 
@@ -43,13 +43,13 @@
         }, 5000);
     }
 
-    function cadastrarProduto(codigo, nome, quantidade, preco) {
+    function cadastrarProduto(codigo, nome, preco, quantidade) {
 
         var data = JSON.stringify({
             "codigo": codigo,
             "nome": nome,
-            "quantidade": quantidade,
-            "preco": preco
+            "preco": preco,
+            "quantidade": quantidade
         });
 
         var xhr = new XMLHttpRequest();
@@ -75,5 +75,6 @@
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send(data);
+
     }
 }

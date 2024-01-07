@@ -1,0 +1,67 @@
+.topnav {
+    position: fixed;
+    width: 100%;
+    background-color: #1b2a41;
+    box-shadow: 0 0 10px rgb(149 149 149 / 95%);
+}
+
+    .topnav a {
+        display: none;
+        float: none;
+        color: #f2f2f2;
+        text-align: left;
+        padding: 14px 16px;
+        margin: 0
+    }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+            .topnav a:is(:link, :active, :visited).active {
+                background-color: #ffc107;
+                color: black;
+            }
+
+        .topnav a.icon {
+            float: right;
+            display: block;
+            height: 19px;
+            width: 23px;
+            padding: 15px
+        }
+
+            .topnav a.icon .line {
+                display: block;
+                background-color: #fff;
+                height: 3px;
+                margin: 2px;
+            }
+
+    .topnav.open a {
+        display: block
+    }
+
+        .topnav.open a.icon {
+            position: absolute;
+            top: 0;
+            right: 0
+        }
+
+@media only screen and (min-width: 768px) {
+
+    p {
+        text-align: center;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        text-align: center
+    }
+
+    .topnav a.icon {
+        display: none;
+    }
+}

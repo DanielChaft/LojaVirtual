@@ -6,11 +6,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="Produto.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Menu.css" type="text/css">
+    <link rel="stylesheet" href="Produto.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="Menu.js"></script>
 </head>
 
 <body>
+
+    <main-menu></main-menu>
+
     <div class="container">
         <div class="box">
 
@@ -19,43 +24,40 @@
             <h1>Cadastro de Produto</h1>
 
             <form>
-                <div class="row">
-
-                    <div class="image">
-                        <img src="produto.png" alt="Imagem do Produto" width="300" height="300">
-                    </div>
-
+                <nav class="flexbox">
                     <div class="left">
-                        <label for="txtCodigoProduto">Código do Produto:</label>
-                        <input type="text" class="input-field" id="txtCodigoProd" />
-
-                        <br />
-
-                        <label for="txtNomeProduto">Nome do Produto:</label>
-                        <input type="text" class="input-field" id="txtNomeProd" />
-
-                        <br />
-
-                        <label for="txtQtdEstoqueProduto">Quantidade em Estoque:</label>
-                        <input type="text" class="input-field" id="txtQtdEstoqueProd" />
-
-                        <br />
-
-                        <label for="txtPrecoProduto">Preço do Produto:</label>
-                        <input type="text" class="input-field" id="txtPrecoProd" />
+                        <div class="image">
+                            <img src="produto.png" alt="Imagem do Produto" width="250" height="250">
+                        </div>
                     </div>
 
-                </div>
+                    <div class="right">
+                        <div class="inputBox">
+                            <input type="text" required="required" class="input-field" id="txtCodigoProd" />
+                            <span>Código do Produto</span>
+                        </div>                    
+                        <div class="inputBox">
+                            <input type="text" required="required" class="input-field" id="txtNomeProd" />
+                            <span>Nome do Produto</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" required="required" class="input-field" id="txtQtdEstoqueProd" />
+                            <span>Quantidade em Estoque</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" required="required" class="input-field" id="txtPrecoProd" />
+                            <span>Preço do Produto</span>
+                        </div>
+                    </div>
+                </nav>
 
-                <div class="row">
+                <div class="button">
                     <button id="btnCadastroProduto">CADASTRAR</button>
                 </div>
 
             </form>
 
             <span id="spnErro" class="erro"></span>
-
-            <p>Clique aqui ► <a href="home.html">Home</a> ◄ para retornar</p>
 
         </div>
     </div>
